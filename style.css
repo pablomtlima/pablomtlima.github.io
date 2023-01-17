@@ -5,7 +5,7 @@ ul {
 }
 
 a {
-  color: black;
+  color: rgb(255, 255, 255);
   text-decoration: none;
   font-family: sans-serif;
 }
@@ -25,12 +25,16 @@ a:hover {
 
 #header {
   box-sizing: border-box;
-  height: 70px;
+  height: 90px;
   padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #e7e7e7;
+  background-image:  linear-gradient(rgba(4,9,30,0.6), rgba(4,9,30,0.6)), url('./images/background.jpg');
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+  color: #e7e7e7;
 }
 
 #menu {
