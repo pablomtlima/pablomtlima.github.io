@@ -30,11 +30,15 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-image:  linear-gradient(rgba(4,9,30,0.6), rgba(4,9,30,0.6)), url('./images/background.jpg');
+  background-color: rgb(146, 122, 88);
   background-position: center center;
   background-size: cover;
   position: relative;
   color: #e7e7e7;
+}
+
+image{
+  max-width: 100%;
 }
 
 #menu {
