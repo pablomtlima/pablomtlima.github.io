@@ -3,6 +3,12 @@ ul {
   margin: 0px;
   padding: 0px;
 }
+#boasVindas{
+  border-radius: 50px;
+  background: #e0e0e0;
+  box-shadow:  20px 20px 60px #bebebe,
+               -20px -20px 60px #ffffff;
+}
 
 a {
   color: rgb(255, 255, 255);
@@ -17,6 +23,7 @@ a:hover {
 #logo {
   font-size: 1.5rem;
   font-weight: bold;
+  font-family: Alianza Italic\ 900;
   max-width:100%;
   max-height:100%;
   width:auto;
@@ -40,6 +47,7 @@ a:hover {
 image{
   max-width: 100%;
 }
+
 
 #menu {
   display: flex;
