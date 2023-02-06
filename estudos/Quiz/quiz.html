@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../style.css">
+    <title>Novo quiz</title>
+</head>
+
+<body>
+    <header id="header">
+        <a id="logo" href="../../index.html">Pablo Matos Lima</a>
+        <nav id="nav">
+            <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu"
+                aria-expanded="false">Menu
+                <span id="hamburger"></span>
+            </button>
+            <ul id="menu" role="menu">
+                <li><a href="#">Sobre</a></li>
+                <li><a href="../../Projetos/projetos.html">Projetos</a></li>
+                <li><a href="../../estudos/estudos.html">Estudos</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="intro py-4 bg-danger text-center">
+        <div class="container">
+            <h2 class="text-light display-3 my-2">Quiz</h2>
+        </div>
+    </div>
+
+    <div class="result py-3 d-none bg-danger-subtle text-center">
+        <div class="container lead">
+            <p>Você acertou<span class="score text-danger display-4 p-3">0%</span>do quiz</p>
+        </div>
+    </div>
+    <div class="quiz py-4 bg-danger-subtle">
+        <div class="container">
+            <h2 class="my-2 text-danger">Você conhece as capitais brasileiras?</h2>
+            <form class="quiz-form text-danger">
+                <div my-5>
+                    <p class="lead font-weight-normal">1. Qual a capital do Acre</p>
+                    <div class="form-check my-2 text-white-50">
+                        <label class="form-check-label">
+                            <input type="radio" name="inputQuestion1" value="A" checked>
+                            <span class="text-black">Brasília</span>
+                        </label>
+                    </div>
+                    <div class="form-check my-2 text-white-50">
+                        <label class="form-check-label">
+                            <input type="radio" name="inputQuestion1" value="B" checked>
+                            <span class="text-black">Jeremuabo</span>
+                        </label>
+                    </div>
+                    <div class="form-check my-2 text-white-50">
+                        <label class="form-check-label">
+                            <input type="radio" name="inputQuestion1" value="C" checked>
+                            <span class="text-black">Petrolina</span>
+                        </label>
+                    </div>
+                    <div class="form-check my-2 text-white-50">
+                        <label class="form-check-label">
+                            <input type="radio" name="inputQuestion1" value="D" checked>
+                            <span class="text-black">Rio Branco</span>
+                        </label>
+                    </div>
+                </div>
+                <div my-5>
+                    <p class="lead font-weight-normal">2. Qual a capital da Bahia</p>
+                    <div class="form-check my-2 text-white-50">
+                        <label class="form-check-label">
+                            <input type="radio" name="inputQuestion2" value="A" checked>
+                            <span class="text-black">Brasília</span>
+                        </label>
+                    </div>
+                    <div class="form-check my-2 text-white-50">
+                        <label class="form-check-label">
+                            <input type="radio" name="inputQuestion2" value="B" checked>
+                            <span class="text-black">Salvador</span>
+                        </label>
+                    </div>
+                    <div class="form-check my-2 text-white-50">
+                        <label class="form-check-label">
+                            <input type="radio" name="inputQuestion2" value="C" checked>
+                            <span class="text-black">Rio Branco</span>
+                        </label>
+                    </div>
+                    <div class="form-check my-2 text-white-50">
+                        <label class="form-check-label">
+                            <input type="radio" name="inputQuestion2" value="D" checked>
+                            <span class="text-black">Passos</span>
+                        </label>
+                    </div>
+                </div>
+                <div my-5>
+                    <p class="lead font-weight-normal">3. Qual a capital do Amazonas</p>
+                    <div class="form-check my-2 text-white-50">
+                        <label class="form-check-label">
+                            <input type="radio" name="inputQuestion3" value="A" checked>
+                            <span class="text-black">Manaus</span>
+                        </label>
+                    </div>
+                    <div class="form-check my-2 text-white-50">
+                        <label class="form-check-label">
+                            <input type="radio" name="inputQuestion3" value="B" checked>
+                            <span class="text-black">Rio Branco</span>
+                        </label>
+                    </div>
+                    <div class="form-check my-2 text-white-50">
+                        <label class="form-check-label">
+                            <input type="radio" name="inputQuestion3" value="C" checked>
+                            <span class="text-black">Petrolina</span>
+                        </label>
+                    </div>
+                    <div class="form-check my-2 text-white-50">
+                        <label class="form-check-label">
+                            <input type="radio" name="inputQuestion3" value="D" checked>
+                            <spDn class="text-black">Salvador</span>
+                        </label>
+                    </div>
+                </div>
+                <div my-5>
+                    <p class="lead font-weight-normal">4. Qual a capital do Mato Grosso</p>
+                    <div class="form-check my-2 text-white-50">
+                        <label class="form-check-label">
+                            <input type="radio" name="inputQuestion4" value="A" checked>
+                            <span class="text-black">Cuiabá</span>
+                        </label>
+                    </div>
+                    <div class="form-check my-2 text-white-50">
+                        <label class="form-check-label">
+                            <input type="radio" name="inputQuestion4" value="B" checked>
+                            <span class="text-black">Salvador</span>
+                        </label>
+                    </div>
+                    <div class="form-check my-2 text-white-50">
+                        <label class="form-check-label">
+                            <input type="radio" name="inputQuestion4" value="C" checked>
+                            <span class="text-black">Petrolina</span>
+                        </label>
+                    </div>
+                    <div class="form-check my-2 text-white-50">
+                        <label class="form-check-label">
+                            <input type="radio" name="inputQuestion4" value="D" checked>
+                            <span class="text-black">Pernambuco</span>
+                        </label>
+                    </div>
+                </div>
+                <button class="btn bg-danger text-light">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>
