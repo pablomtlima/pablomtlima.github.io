@@ -35,7 +35,11 @@ form.addEventListener('submit', event => {
     })
 
     let count = 0
-    scrollTo(0, 0)
+    scrollTo({
+        top:0,
+        left:0,
+        bahavior: 'smooth'
+    })
 
     resultado.classList.remove('d-none')
 
