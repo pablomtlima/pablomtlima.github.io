@@ -2,9 +2,9 @@ const formAddTodo = document.querySelector(".form-add-todo");
 const todosContainer = document.querySelector(".todos-container");
 const formSearch = document.querySelector(".form-search");
 
-const addTodo = (addInput) => {
+const addTodo = addInput => {
   if (addInput.length) {
-    todosContainer.innerHTML += `
+    todosContainer.innerHTML +=`
         <li class="list-group-item d-flex justify-content-between align-items-center" data-todo="${addInput}">
         <span>${addInput}</span>
         <i class="far fa-trash-alt" data-trash="${addInput}"></i>
