@@ -7,7 +7,7 @@ const addTodo = addInput => {
     todosContainer.innerHTML +=`
         <li class="list-group-item d-flex justify-content-between align-items-center" data-todo="${addInput}">
         <span>${addInput}</span>
-        <i class="far fa-trash-alt" data-trash="${addInput}"></i>
+        <i class="far fa-trash-alt delete" data-trash="${addInput}"></i>
         </li>`;
 
     event.target.reset();
