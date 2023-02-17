@@ -1,95 +1,65 @@
-const formAddTodo = document.querySelector('.form-add-todo')
-const todosContainer = document.querySelector('.todos-container')
-const formSearch = document.querySelector('.form-search')
+const formAddTodo = document.querySelector(".form-add-todo");
+const todosContainer = document.querySelector(".todos-container");
+const formSearch = document.querySelector(".form-search");
 
-
-formAddTodo.addEventListener('submit', event =>{
-    event.preventDefault()
-    const addInput = event.target.add.value.trim()
-
-    if(addInput){
+const addTodo = (addInput) => {
+  if (addInput.length) {
     todosContainer.innerHTML += `
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-    <span>${addInput}</span>
-    <i class="far fa-trash-alt delete"></i>
-    </li>`}
+        <li class="list-group-item d-flex justify-content-between align-items-center" data-todo="${addInput}">
+        <span>${addInput}</span>
+        <i class="far fa-trash-alt" data-trash="${addInput}"></i>
+        </li>`;
 
-    event.target.add.value = ''
+    event.target.reset();
+  }
+};
+formAddTodo.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const addInput = event.target.add.value.trim();
+  addTodo(addInput);
+});
 
-})
+const removeTodo = (elementoClicado) => {
+  const trashDataValue = elementoClicado.dataset.trash;
+  const todo = document.querySelector(`[data-todo="${trashDataValue}"]`);
 
-todosContainer.addEventListener('click', event=>{
-    const elementoClicado = event.target
-    if (Array.from(elementoClicado.classList).includes('delete')){
-        elementoClicado.parentElement.remove()
-    }    
-})  
+  if (trashDataValue) {
+    todo.remove();
+  }
+};
 
-formSearch.addEventListener('input', event => {
-    event.preventDefault()
-    
-    const inputSearch = event.target.value.trim()
+const filterTodos = (todos, inputValue, returnMatchedTodos) =>
+  todos.filter(todo => {
+    const matchedTodos = todo.textContent.toLowerCase().includes(inputValue.toLowerCase());
+    return returnMatchedTodos ? matchedTodos : !matchedTodos;
+  });
 
-    Array.from(todosContainer.children)
-    .filter(todo => !todo.textContent.toLowerCase().includes(inputSearch))
-    .forEach(todo => {
-        todo.classList.add('hidden')
-        todo.classList.remove('d-flex')
-    })
+const manipulateClasses = (todos, classToAdd, classToRemove) => {
+  todos.forEach(todo => {
+    todo.classList.remove(classToRemove);
+    todo.classList.add(classToAdd);
+  });
+};
 
-    Array.from(todosContainer.children)
-    .filter(todo => todo.textContent.toLowerCase().includes(inputSearch))
-    .forEach(todo => {
-        todo.classList.remove('hidden')
-        todo.classList.add('d-flex')
-    })
+const hideTodos = (todos, inputValue) => {
+  const todosToHide = filterTodos(todos, inputValue, false);
+  manipulateClasses(todosToHide, "hidden", "d-flex");
+};
 
+const showTodos = (todos, inputValue) => {
+  const todosToShow = filterTodos(todos, inputValue, true);
+  manipulateClasses(todosToShow, "d-flex", "hidden");
+};
 
+todosContainer.addEventListener("click", (event) => {
+  const elementoClicado = event.target;
+  removeTodo(elementoClicado);
+});
 
-    
-})
+formSearch.addEventListener("input", (event) => {
+  const todos = Array.from(todosContainer.children);
+  const inputValue = event.target.value.trim();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// formSearch.addEventListener('input', event=>{
-//     event.preventDefault()
-//     const inputSearch = event.target.value.trim()
-    
-//     console.log(inputSearch)  
-
-//     Array.from(todosContainer.children)
-//     .filter(todo => !todo.textContent.includes(inputSearch))
-//     .forEach( todo => {
-//         todo.classList.remove('d-flex')
-//         todo.classList.add('hidden')
-//         console.log(inputSearch.textContent)
-//     })
-
-
-// })
-
+  hideTodos(todos, inputValue);
+  showTodos(todos, inputValue);
+});
